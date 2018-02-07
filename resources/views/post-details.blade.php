@@ -3,7 +3,6 @@
         <div id="main">
             <div class="post">
                 <h2><a href="<?php echo config('app.locale') ?>/<?php echo $post->slug ?> ">{{ $post->title }}</a></h2>
-                <p class="date">18 <span>Jul</span></p>
             </div>
 
             <ul class="meta">
