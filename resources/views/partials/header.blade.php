@@ -24,7 +24,7 @@
             </div>
             <div class="col-lg-3 col-xl-3 hidden-md hidden-sm hidden-xs">
                 <div class="social">
-                    <form action="mailto:">
+                    <form action="mailto:Me@odettejacqmin.com">
                         <button>
                             <span class="icon icon-envelope"> {{ trans('lang.header_emailMe') }}</span>
                         </button>
