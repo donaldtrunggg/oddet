@@ -92,7 +92,7 @@ class AdminController extends Controller
         $this->updatePostLangDB($oldSlug, $slug, 'en', $enTitle, $enContent);
         $this->updatePostLangDB($oldSlug, $slug, 'tha', $thaTitle, $thaContent);
 
-        $url = $_SERVER['HTTP_ORIGIN'] . '/' . config('app.locale') . '/admin/post/';
+        $url = $_SERVER['HTTP_ORIGIN'] . '/' . config('app.locale') . '/admin/post';
         header("Location: $url" ); die();
     }
 
@@ -100,8 +100,7 @@ class AdminController extends Controller
     {
         return DB::table('posts')
             ->where('id', $id)
-            ->pluck('slug')
-            ->first();
+            ->pluck('slug');
     }
 
     public function insertPostDB($slug, $cat_slug)

@@ -23,9 +23,11 @@ class PostController extends Controller
             ->where('posts.slug', $slug)
             ->first();
 
-        $post->slug = $slug;
+        if (isset($slug))
+            $post->slug = $slug;
 
-        $previousUrl= DB::table('posts')->where('id', '<', $post->id)->first();
+
+        $previousUrl = DB::table('posts')->where('id', '<', $post->id)->first();
         $nextUrl = DB::table('posts')->where('id', '>', $post->id)->first();
 
         return view('post-detail', ['post' => $post, 'preUrl' => @$previousUrl->slug, 'nextUrl' => @$nextUrl->slug, 'dataFooter' => $this->getFooter()]);
