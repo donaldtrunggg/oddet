@@ -1,0 +1,300 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* HEADER */
+.header-wrapper {
+    position: relative;
+    overflow: hidden;
+    max-height: 200px;
+}
+
+#span-social:hover {
+    text-decoration: none;
+}
+
+/* LOGO */
+#logo {
+    position: absolute;
+    top: 3em;
+    left: 0;
+}
+
+#logo img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+}
+
+/* SUBSCRIBE */
+.subscribe {
+    text-align: center;
+    margin: 0 auto;
+    top: 4em;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.subscribe p {
+    font-size: 15pt;
+    margin-bottom: 0px;
+    line-height: 30px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.subscribe input {
+    border-radius: 25px;
+    margin: 5px;
+}
+
+.subscribe input[type="button"] {
+    text-align: center;
+    width: inherit;
+    background-color: lightgray;
+}
+
+.subscribe input[type="button"]:hover {
+    text-align: center;
+    width: inherit;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.subscribe input[type="email"] {
+    text-align: center;
+    width: inherit;
+}
+
+.subscribe input[type="email"]::-webkit-input-placeholder {
+    text-align: center;
+}
+
+/* SOCIAL */
+.social {
+    text-align: center;
+    margin: 0 auto;
+    top: 4em;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.social a {
+    text-decoration: none;
+    color: #000;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+.social button {
+    text-align: center;
+    text-transform: uppercase;
+    width: 50%;
+    background-color: #000;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.social button:hover {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.social input.search-text {
+    color: #222;
+    position:relative;
+    z-index:5;
+    -webkit-transition: z-index 0.8s, width 0.5s, background 0.3s ease, border 0.3s;
+    transition: z-index 0.8s, width 0.5s, background 0.3s ease, border 0.3s;
+    height: 45px;
+    width: 0;
+    margin: 0;
+    padding: 5px 0 5px 40px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    border: 1px solid transparent;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjwhRE9DVFlQRSBzdmcgIFBVQkxJQyAnLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4nICAnaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkJz48c3ZnIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUxMiA1MTIiIGhlaWdodD0iNTEycHgiIGlkPSJMYXllcl8xIiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEycHgiIHhtbDpzcGFjZT0icHJlc2VydmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPjxwYXRoIGQ9Ik01MDMuODY2LDQ3Ny45NzRMMzYwLjk1OCwzMzUuMDUyYzI4LjcyNS0zNC41NDQsNDYuMDE3LTc4LjkxMiw0Ni4wMTctMTI3LjMzNiAgYzAtMTEwLjA4NC04OS4yMjctMTk5LjMxMi0xOTkuMzEyLTE5OS4zMTJDOTcuNTk5LDguNDAzLDguMzUxLDk3LjYzMSw4LjM1MSwyMDcuNzE1YzAsMTEwLjA2NCw4OS4yNDgsMTk5LjMxMiwxOTkuMzEyLDE5OS4zMTIgIGM0OC40MzUsMCw5Mi43OTItMTcuMjkyLDEyNy4zMzYtNDYuMDE3bDE0Mi45MDgsMTQyLjkyMkw1MDMuODY2LDQ3Ny45NzR6IE0yOS4zMzEsMjA3LjcxNWMwLTk4LjMzNCw3OS45ODctMTc4LjMzMiwxNzguMzMyLTE3OC4zMzIgIGM5OC4zMjUsMCwxNzguMzMyLDc5Ljk5OCwxNzguMzMyLDE3OC4zMzJzLTgwLjAwNywxNzguMzMyLTE3OC4zMzIsMTc4LjMzMkMxMDkuMzE4LDM4Ni4wNDcsMjkuMzMxLDMwNi4wNSwyOS4zMzEsMjA3LjcxNXoiIGZpbGw9IiMzNzQwNEQiLz48L3N2Zz4=) no-repeat left 9px center transparent;
+    background-size:24px;
+}
+
+.social input.search-text:focus {
+    z-index: 3;
+    width: 200px;
+    border: 1px solid #666;
+    background-color: white;
+    outline: none;
+    cursor:auto;
+}
+
+.social input.search-submit {
+    position: relative;
+    z-index: 4;
+    top:17px;
+    left: 49px;
+    width: 45px;
+    height: 45px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    background: none;
+}
+
+.social input.search-text::-webkit-search-cancel-button {
+    cursor:pointer;
+}
+
+/** MENU */
+nav {
+    margin-top: 15px;
+    margin-bottom: 30px;
+    height: 40px;
+    width: 100%;
+    font-size: 13pt;
+    font-family: 'PT Sans', Arial, sans-serif;
+    font-weight: bold;
+    position: relative;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0 auto;
+    width: 100%;
+    height: 50px;
+    list-style: none;
+    line-height: normal;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+nav a {
+    display: inline-block;
+    padding: 0 40px 0 40px;
+    line-height: 70px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 15pt;
+    color: #000;
+    border: none;
+}
+
+nav li a {
+    box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+
+nav li a:hover {
+    background-color: #000;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #000;
+    border-radius: 20px;
+}
+
+nav li:last-child a {
+    border-right: 0;
+}
+
+nav a:hover, nav a:active {
+    background-color: #8c99a4;
+}
+
+nav a#pull {
+    display: none;
+}
+
+@media screen and (max-width: 1120px) {
+    nav {
+        height: auto;
+    }
+    nav ul {
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+    nav li {
+        width: 50%;
+        float: left;
+        position: relative;
+    }
+    nav a {
+        text-align: left;
+        width: 100%;
+        text-indent: 25px;
+    }
+}
+
+@media only screen and (max-width : 480px) {
+    nav {
+        border-bottom: 0;
+    }
+    nav ul {
+        display: none;
+        height: auto;
+    }
+    nav a#pull {
+        display: block;
+        background-color: #000000;
+        color: #fff0ff;
+        width: 100%;
+        position: relative;
+    }
+    nav a#pull:after {
+        content:"";
+        width: 30px;
+        height: 30px;
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+    }
+}
+
+@media only screen and (max-width : 320px) {
+    nav li {
+        display: block;
+        float: none;
+        width: 100%;
+    }
+}
+
+/* FOOTER */
+.mySlides {
+    display: none;
+    margin: auto;
+}
+.w3-left, .w3-right, .w3-badge {cursor:pointer;color:black}
+.w3-badge {height:13px;width:13px;padding:0}
