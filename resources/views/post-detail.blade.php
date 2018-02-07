@@ -41,7 +41,7 @@
             <div class="w3-container w3-cell">
                 <p class="next">
                     <?php $url = $_SERVER['HTTP_HOST'] . '/' . config('app.locale') . '/' . $nextUrl;?>
-                    <a href="<?php echo $nextUrl;?>">&#10095; NEXT POST</a>
+                    <a href="<?php echo $nextUrl;?>">NEXT POST&#10095;</a>
                 </p>
             </div>
         </div>

@@ -16,59 +16,63 @@ return [
 //    'failed' => 'english ne',
 //    'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
-    'edit' => 'EditT',
-    'delete' => 'DeleteT',
+    'edit' => 'แก้ไข',
+    'delete' => 'ลบ',
 
     // Admin Instagram View
-    'admin_ins_image' => 'IMAGET',
-    'admin_ins_link' => 'LINKT',
-    'admin_ins_time' => 'CREATE DATET',
-    'admin_ins_option' => 'OPTIONT',
+    'admin_ins_image' => 'ภาพ',
+    'admin_ins_link' => 'ลิงก์',
+    'admin_ins_time' => 'วันที่สร้าง',
+    'admin_ins_option' => 'ตัวเลือก',
 
     // Admin Post View
-    'admin_postview_url' => 'URLT',
-    'admin_postview_category' => 'CATEGORYT',
-    'admin_postview_createDate' => 'CREATE DATET',
-    'admin_postview_option' => 'OPTIONT',
+    'admin_postview_url' => 'ที่อยู่ url',
+    'admin_postview_category' => 'ประเภท',
+    'admin_postview_createDate' => 'วันที่สร้าง',
+    'admin_postview_option' => 'ตัวเลือก',
 
     // Admin Instagram Insert
-    'admin_ins_url' => 'URL IMAGE:T',
-    'admin_ins_linkIns' => 'LINK TO INSTAGRAM:T',
-    'admin_ins_like' => 'LIKE NUMBER:T',
-    'admin_ins_date' => 'DATE:T',
+    'admin_ins_url' => 'ที่อยู่ url',
+    'admin_ins_linkIns' => 'ลิงค์ INSTAGRAM : ',
+    'admin_ins_like' => 'จำนวนของชอบ',
+    'admin_ins_date' => 'วันที่',
 
     // Admin Post Insert
     'admin_post_url' => 'URL:',
-    'admin_post_url_placeholder' => 'LINK URL (EX: travel-tips)T',
-    'admin_post_category' => 'CATEGORYT',
-    'admin_post_title' => 'POST TITLET',
+    'admin_post_url_placeholder' => 'ที่อยู่ url (EX: travel-tips)',
+    'admin_post_category' => 'ประเภท',
+    'admin_post_title' => 'หัวข้อ',
 
     // Admin navigation
-    'admin_nav_managePost' => 'Manage PostT',
-    'admin_nav_insertPost' => 'Insert PostT',
-    'admin_nav_manageIns' => 'Manager Image InstagramT',
-    'admin_nav_insertIns' => 'Insert Image InstagramT',
-    'admin_nav_logout' => 'LogoutT',
+    'admin_nav_managePost' => 'จัดการเสา',
+    'admin_nav_insertPost' => 'แทรกโพสต์',
+    'admin_nav_manageIns' => 'จัดการภาพ',
+    'admin_nav_insertIns' => 'แทรกรูปภาพ',
+    'admin_nav_logout' => 'ออกจากระบบ',
 
     // Navigation
-    'nav_home' => 'HomeT',
-    'nav_travel' => 'TravelT',
-    'nav_foodie' => 'FoodieT',
-    'nav_cooking' => 'CookingT',
-    'nav_lifestyle' => 'LifestyleT',
-    'nav_gallery' => 'GalleryT',
+    'nav_home' => 'บ้าน',
+    'nav_travel' => 'เดินทาง',
+    'nav_foodie' => 'อาหาร',
+    'nav_cooking' => 'การปรุงอาหาร',
+    'nav_lifestyle' => 'วิถีการดำเนินชีวิต',
+    'nav_gallery' => 'เฉลียง',
 
     // Header
-    'header_subcrible' => 'SUBSCRIBET',
-    'header_email' => 'Your EmailT',
-    'header_emailBtn' => 'Yes, I\'m inT',
-    'header_emailMe' => 'Email meT',
+    'header_subcrible' => 'สมัครรับ',
+    'header_email' => 'ที่อยู่อีเมลของคุณ',
+    'header_emailBtn' => 'ใช่ผมอยู่ใน',
+    'header_emailMe' => 'ส่งอีเมลฉัน',
 
     // Noti
-    'noti_noData' => 'We don\'t have any post about this categoryT',
-    'noti_oldPost' => 'OLDER POSTT',
-    'noti_nextPost' => 'NEXT POSTT',
+    'noti_noData' => 'เราไม่มีโพสต์เกี่ยวกับหมวดหมู่นี้',
+    'noti_oldPost' => 'โพสต์ที่เก่ากว่า',
+    'noti_nextPost' => 'ต่อไปโพสต์',
 
     // Post detail
-    'post_cate' => 'Category:T ',
+    'post_cate' => 'ประเภท',
+
+    // About
+    'about_1' => 'Odette Henriette Jacqmin เป็นสาวแฟชั่นหลงใหลกับความปรารถนาในการเดินทาง เธอทำงานเป็นแบบอย่างและเดินทางไปทั่วโลก',
+    'about_2' => '"Le Journal" เป็นการสร้างวิถีชีวิตของตัวเองในชีวิตที่เราต้องการกำหนดเป้าหมายทำงานหนักและมีความคิดเชิงบวกในกระบวนการนี้ นอกจากนี้เรามักจะต้องยิ้มและหัวเราะตลอดการเดินทางของเราเพราะนั่นคือทั้งหมดที่สำคัญ',
 ];
