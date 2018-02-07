@@ -19,7 +19,6 @@ if (!isset($_SESSION['isADMIN']) || (isset($_SESSION['isADMIN']) && !$_SESSION['
             <li><a href="/logoutAction" style="color: orange">{{ trans('lang.admin_nav_logout') }}</a></li>
 
         </ul>
-        <a href="#" id="pull">Menu</a>
     </nav>
 </div>
 

@@ -8,7 +8,7 @@
     @include("admin.navigation")
 
     <div class="w3-container" style="margin: 0 auto; text-align: justify;">
-        @if(count($posts) > 0):
+        @if(count($posts) > 0)
         @foreach($posts as $post)
             @include("post-details")
         @endforeach
