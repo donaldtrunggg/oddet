@@ -1,4 +1,3 @@
-{{         trans('lang.failed') }}
 
 @include("partials/head")
 

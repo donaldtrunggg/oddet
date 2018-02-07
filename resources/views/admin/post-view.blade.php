@@ -28,7 +28,7 @@
                     <td>{{ $item->cat_slug }}</td>
                     <td>{{ $item->create_date }}</td>
                     <td class="fake-a">
-                        <a href="update/{{ $item->slug }}" >{{ trans('lang.edit') }}</a>
+                        <a href="post/update/{{ $item->slug }}" >{{ trans('lang.edit') }}</a>
                         <a id="slugDelete" onclick="deleteAction({{$item->slug}})" style="color: #007bff;">{{ trans('lang.delete') }}</a>
                     </td>
                 </tr>

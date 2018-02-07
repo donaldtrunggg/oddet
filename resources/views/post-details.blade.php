@@ -7,7 +7,8 @@
             </div>
 
             <ul class="meta">
-                <li>Category : <a href="#">FOODIE</a></li>
+                <li>{{ trans('lang.post_cate') }}<a target="_blank" href="/<?php echo config('app.locale') ?>/category/{{ $post->cat_slug }}">{{ $post->cat_slug }}</a></li>
+                <li>{{ $post->create_date }}</li>
             </ul>
 
             <div class="post-content">

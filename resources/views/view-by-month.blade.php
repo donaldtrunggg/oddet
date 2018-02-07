@@ -1,5 +1,3 @@
-{{         trans('lang.failed') }}
-<?php var_dump($data);die(); ?>
 @include("partials/head")
 
 <link rel="stylesheet" href="/css/animate.css">

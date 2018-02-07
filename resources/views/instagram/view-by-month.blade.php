@@ -1,4 +1,3 @@
-{{         trans('lang.failed') }}
 @include("partials/head")
 
 <link rel="stylesheet" href="/assets/css/main.css"/>
