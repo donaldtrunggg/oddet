@@ -3,8 +3,9 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (!isset($_SESSION['isADMIN']) && !$_SESSION['isADMIN'])
+if (!isset($_SESSION['isADMIN']) || (isset($_SESSION['isADMIN']) && !$_SESSION['isADMIN']))
     return;
+
 ?>
 <div class="row">
     <nav class="clearfix">
