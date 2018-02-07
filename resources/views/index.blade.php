@@ -14,17 +14,22 @@
         @endforeach
 
         <div class="w3-cell-row">
-            <div class="w3-container w3-cell">
-                <p class="prev">
-                    <a href="<?php echo config('app.locale') ?>?page=<?php echo $page - 1?>">&#10094; {{ trans('lang.noti_oldPost') }}</a>
-                </p>
-            </div>
+            @if($page > 0)
+                <div class="w3-container w3-cell">
+                    <p class="prev">
+                        <a href="<?php echo config('app.locale') ?>?page=<?php echo $page - 1?>">&#10094; {{ trans('lang.noti_oldPost') }}</a>
+                    </p>
+                </div>
+            @endif
 
-            <div class="w3-container w3-cell">
-                <p class="next">
-                    <a href="<?php echo config('app.locale') ?>?page=<?php echo $page + 1 ?>">{{ trans('lang.noti_nextPost') }} &#10095;</a>
-                </p>
-            </div>
+            @if(count($posts) == 5)
+                <div class="w3-container w3-cell">
+                    <p class="next">
+                        <a href="<?php echo config('app.locale') ?>?page=<?php echo $page + 1 ?>">{{ trans('lang.noti_nextPost') }}
+                            &#10095;</a>
+                    </p>
+                </div>
+            @endif
         </div>
         @else
             <div class="text-center" style="padding: 100px 0;">{{ trans('lang.noti_noData') }}</div>
