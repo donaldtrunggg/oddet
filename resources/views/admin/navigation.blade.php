@@ -6,8 +6,8 @@ if (!isset($_SESSION)) {
 if (!isset($_SESSION['isADMIN']))
     return;
 ?>
-<div class="row" style="padding: 40px 0;">
-    <nav class="">
+<div class="row">
+    <nav class="clearfix">
         <ul class="clearfix">
             <li><a href="/<?php echo config('app.locale') ?>/admin/post" style="color: orange; ">{{ trans('lang.admin_nav_managePost') }}</a></li>
             <li><a href="/<?php echo config('app.locale') ?>/admin/post/insert/" style="color: orange">{{ trans('lang.admin_nav_insertPost') }}</a>
@@ -21,3 +21,23 @@ if (!isset($_SESSION['isADMIN']))
         <a href="#" id="pull">Menu</a>
     </nav>
 </div>
+
+<script>
+    $(function() {
+        var pull        = $('#pull');
+        var menu        = $('nav ul');
+        var menuHeight  = menu.height();
+
+        $(pull).on('click', function(e) {
+            e.preventDefault();
+            menu.slideToggle();
+        });
+
+        $(window).resize(function(){
+            var w = $(window).width();
+            if(menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+    });
+</script>

@@ -46,8 +46,8 @@ return [
     // Admin navigation
     'admin_nav_managePost' => 'Manage Post',
     'admin_nav_insertPost' => 'Insert Post',
-    'admin_nav_manageIns' => 'Manager Image Instagram',
-    'admin_nav_insertIns' => 'Insert Image Instagram',
+    'admin_nav_manageIns' => 'Manage Instagram',
+    'admin_nav_insertIns' => 'Insert Instagram',
     'admin_nav_logout' => 'Logout',
 
     // Navigation
@@ -71,4 +71,8 @@ return [
 
     // Post detail
     'post_cate' => 'Category: ',
+
+    // About
+    'about_1' => 'Odette Henriette Jacqmin is a a passionated fashion girl with desire for traveling. She works as a model and travels all over the world.',
+    'about_2' => '"Le Journal" is about creating our own path in life where we need to set goals, work hard, and having a positive mindset in the process. Also, We always have to smile and laugh throughout our journey, because that is all that matters.',
 ];

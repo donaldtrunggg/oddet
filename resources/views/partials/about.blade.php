@@ -7,8 +7,9 @@
     <div class="col-lg-7">
         <p style="text-align: justify;font-size: 15pt">
             <i>
-                Odette Henriette Jacqmin is a a passionated fashion girl with desire for traveling. She works as a model and travels all over the world.<br><br>
-                "Le Journal" is about creating our own path in life where we need to set goals, work hard, and having a positive mindset in the process. Also, We always have to smile and laugh throughout our journey, because that is all that matters.
+                {{ trans('lang.about_1') }}
+                <br><br>
+                {{ trans('lang.about_2') }}
             </i>
         </p>
     </div>

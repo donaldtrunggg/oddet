@@ -18,7 +18,7 @@
             $year = $firstMonth[0]->year;
             $month = $firstMonth[0]->month;
             $monthName = date('F', mktime(0, 0, 0, $month, 10));
-            $firstMonth = array_slice($firstMonth, 0, 8);
+            $firstMonth = array_slice($firstMonth->toArray(), 0, 8);
             ?>
             <header class="special">
                 <a href="/{{ config('app.locale') }}/gallery/{{ $monthName . '/' .  $year }}">
@@ -52,7 +52,7 @@
             $year = $secondMonth[0]->year;
             $month = $secondMonth[0]->month;
             $monthName = date('F', mktime(0, 0, 0, $month, 10));
-            $secondMonth = array_slice($secondMonth, 0, 8);
+            $secondMonth = array_slice($secondMonth->toArray(), 0, 8);
             ?>
             <header class="special">
                 <a href="/{{ config('app.locale') }}/gallery/{{ $monthName . '/' .  $year }}">
