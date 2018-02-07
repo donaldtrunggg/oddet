@@ -3,7 +3,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (!isset($_SESSION['isADMIN']))
+if (!isset($_SESSION['isADMIN']) && !$_SESSION['isADMIN'])
     return;
 ?>
 <div class="row" style="padding: 40px 0;">
