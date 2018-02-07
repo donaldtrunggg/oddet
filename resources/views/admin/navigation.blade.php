@@ -21,23 +21,3 @@ if (!isset($_SESSION['isADMIN']) || (isset($_SESSION['isADMIN']) && !$_SESSION['
         </ul>
     </nav>
 </div>
-
-<script>
-    $(function() {
-        var pull        = $('#pull');
-        var menu        = $('nav ul');
-        var menuHeight  = menu.height();
-
-        $(pull).on('click', function(e) {
-            e.preventDefault();
-            menu.slideToggle();
-        });
-
-        $(window).resize(function(){
-            var w = $(window).width();
-            if(menu.is(':hidden')) {
-                menu.removeAttr('style');
-            }
-        });
-    });
-</script>

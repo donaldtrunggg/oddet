@@ -9,16 +9,18 @@
             <li><a href="/<?php echo config('app.locale') ?>/gallery">{{ trans('lang.nav_gallery') }}</a></li>
         </ul>
         <a href="#" id="pull">Menu</a>
+
     </nav>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script>
-    $(function() {
-        var pull        = $('#pull');
+<script type="text/javascript">
+    $(document).ready(function () {
         var menu        = $('nav ul');
         var menuHeight  = menu.height();
 
-        $(pull).on('click', function(e) {
+        $('#pull').on('click', function(e) {
+            console.log('dw');
             e.preventDefault();
             menu.slideToggle();
         });
