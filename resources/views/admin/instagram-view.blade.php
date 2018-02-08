@@ -27,7 +27,7 @@
                     <td>{{ $item->day . '/' . $item->month . '/' . $item->year }}</td>
                     <td class="fake-a">
                         <a href="update/{{ $item->id }}">{{ trans('lang.edit') }}</a>
-                        <a id="idDelete" onclick="deleteAction({{$item->id}})"
+                        <a id="idDelete" onclick="deleteAction('{{$item->id}}')"
                            style="color: #007bff;">{{trans('lang.delete')}}</a>
                     </td>
                 </tr>

@@ -71,7 +71,7 @@ class AdminController extends Controller
         $this->insertPostLangDB($slug, 'en', $enTitle, $enContent);
         $this->insertPostLangDB($slug, 'tha', $thaTitle, $thaContent);
 
-        $url = $_SERVER['HTTP_HOST'] . '/' . config('app.locale') . '/admin/post/';
+        $url = $_SERVER['HTTP_ORIGIN'] . '/' . config('app.locale') . '/admin/post/';
         header("Location: $url" ); die();
     }
 
