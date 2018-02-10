@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class CategoryController extends Controller
 {
@@ -58,5 +59,36 @@ class CategoryController extends Controller
                 ->get();
         }
         return view('index', ['posts' => $posts, 'page' => $page, 'dataFooter' => $this->getFooter()]);
+    }
+
+    // SEND MAIL
+    public function saveMailSubcrible()
+    {
+        $email = $_POST['email'];
+        $create_date = Carbon::now();
+
+        $status = 0; // cannot save
+
+        if(!$this->getByEmail($email)) {
+            DB::table('subcrible')->insert([
+                'mail' => $email,
+                'lang' => config('app.locale'),
+                'create_date' => $create_date
+            ]);
+
+            $status = 1; // Success
+        }
+        else {
+            $status = 2; // Already Exist
+        }
+
+        echo $status;
+    }
+
+    public function getByEmail($email)
+    {
+        return DB::table('subcrible')
+            ->where('mail', $email)
+            ->first();
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
@@ -10,16 +11,19 @@ class AdminController extends Controller
     {
         session_start();
 
-        if(!isset($_SESSION['isADMIN']))
+        if (!isset($_SESSION['isADMIN']))
             return view('404');
     }
 
     public function view($lang)
     {
+        $this->sendMailAllUser();
+        die();
+
         config(['app.locale' => $lang]);
         $page = 0;
 
-        if(isset($_GET['page'])) {
+        if (isset($_GET['page'])) {
             $page = $_GET['page'];
         }
 
@@ -62,17 +66,20 @@ class AdminController extends Controller
         $cat_slug = $_POST['category'];
 
         $enTitle = $_POST['en-title'];
-        $enContent =  htmlentities($_POST['en-ckeditor']);
+        $enContent = htmlentities($_POST['en-ckeditor']);
 
         $thaTitle = $_POST['tha-title'];
-        $thaContent =  htmlentities($_POST['tha-ckeditor']);
+        $thaContent = htmlentities($_POST['tha-ckeditor']);
 
         $this->insertPostDB($slug, $cat_slug);
         $this->insertPostLangDB($slug, 'en', $enTitle, $enContent);
         $this->insertPostLangDB($slug, 'tha', $thaTitle, $thaContent);
 
+        $this->sendMailAllUser();
+
         $url = $_SERVER['HTTP_ORIGIN'] . '/' . config('app.locale') . '/admin/post/';
-        header("Location: $url" ); die();
+        header("Location: $url");
+        die();
     }
 
     public function updatePostAction($id)
@@ -81,10 +88,10 @@ class AdminController extends Controller
         $cat_slug = $_POST['category'];
 
         $enTitle = $_POST['en-title'];
-        $enContent =  htmlentities($_POST['en-ckeditor']);
+        $enContent = htmlentities($_POST['en-ckeditor']);
 
         $thaTitle = $_POST['tha-title'];
-        $thaContent =  htmlentities($_POST['tha-ckeditor']);
+        $thaContent = htmlentities($_POST['tha-ckeditor']);
 
         $oldSlug = $this->getSlug($id);
 
@@ -93,7 +100,8 @@ class AdminController extends Controller
         $this->updatePostLangDB($oldSlug, $slug, 'tha', $thaTitle, $thaContent);
 
         $url = $_SERVER['HTTP_ORIGIN'] . '/' . config('app.locale') . '/admin/post';
-        header("Location: $url" ); die();
+        header("Location: $url");
+        die();
     }
 
     public function getSlug($id)
@@ -152,6 +160,33 @@ class AdminController extends Controller
             ->delete();
 
         $url = $_SERVER['HTTP_HOST'] . '/' . config('app.locale') . '/admin/post/';
-        header("Location: $url" ); die();
+        header("Location: $url");
+        die();
+    }
+
+    public function sendMailAllUser($slug = 'travel')
+    {
+        $data = DB::table('subcrible')->get();
+        foreach ($data as $item) {
+            $this->sendMail($item->mail, $slug, $item->lang);
+        }
+    }
+
+    public function sendMail($mailTo, $slug, $lang)
+    {
+        $url = $_SERVER['HTTP_HOST'] . '/' . $lang . '/' . $slug;
+
+        $message = 'Hello Thai ' . $url;
+        if ($lang == 'en') {
+            $message = 'Hello Brishtis ' . $url;
+        }
+
+        $to = $mailTo;
+        $subject = 'the subject';
+        $headers = 'From: nhtrung13clc@gmail.com' . "\r\n" .
+            'Reply-To: nhtrung13clc@gmail.com' . "\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+
+        mail($to, $subject, $message, $headers);
     }
 }

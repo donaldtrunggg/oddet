@@ -15,6 +15,8 @@ Route::get('/', function () {
     return redirect('/en');
 });
 
+Route::post('/saveMailSubcrible', 'CategoryController@saveMailSubcrible');
+
 Route::get('/login', 'HomeController@login');
 Route::post('/loginAction', 'HomeController@loginAction');
 Route::get('/logoutAction', 'HomeController@logoutAction');

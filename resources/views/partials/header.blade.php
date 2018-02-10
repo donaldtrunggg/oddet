@@ -1,16 +1,20 @@
+<meta name="csrf-token" content="<?php echo csrf_token() ?>">
 <div class="header-wrapper">
     <div class="container" style="margin-bottom: 5px;">
         <div class="row">
             <div class="col-lg-3 col-xl-3 col-md-6 col-xs-6 col-sm-6">
                 <div class="subscribe">
                     <p>{{ trans('lang.header_subcrible') }}</p>
-                    <input type="email" placeholder="{{ trans('lang.header_email') }}" /><br>
-                    <input type="button" value="{{ trans('lang.header_emailBtn') }}" /><br>
+                    <input id="emailSubcrile" type="email" placeholder="{{ trans('lang.header_email') }}"/><br>
+                    <input id="btnSubcrible" type="button" onclick="handleSubcrible()"
+                           value="{{ trans('lang.header_emailBtn') }}"/><br>
                     <form action="">
-                        <input type="radio" name="lang" onclick="handleClick(this);" value="en" <?php if(config('app.locale') == 'en') echo 'checked' ?>>
+                        <input type="radio" name="lang" onclick="handleClick(this);"
+                               value="en" <?php if (config('app.locale') == 'en') echo 'checked' ?>>
                         <img src="{{ asset("images/uk.png") }}">
                         English
-                        <input type="radio" name="lang" onclick="handleClick(this);" value="tha" <?php if(config('app.locale') == 'tha') echo 'checked' ?>>
+                        <input type="radio" name="lang" onclick="handleClick(this);"
+                               value="tha" <?php if (config('app.locale') == 'tha') echo 'checked' ?>>
                         <img src="{{ asset("images/thailand.png") }}">
                         Thailand<br>
                     </form>
@@ -42,10 +46,11 @@
                     <br>
 
                     @if($_SERVER['REQUEST_URI'] == '/tha' || $_SERVER['REQUEST_URI'] == '/en' || (strpos($_SERVER['REQUEST_URI'], '/category/') > 0))
-                    <form action="" role="search" class="search-form">
-                        <input type="submit" value="" class="search-submit">
-                        <input type="search" name="q" class="search-text" placeholder="Search..." autocomplete="off">
-                    </form>
+                        <form action="" role="search" class="search-form">
+                            <input type="submit" value="" class="search-submit">
+                            <input type="search" name="q" class="search-text" placeholder="Search..."
+                                   autocomplete="off">
+                        </form>
                     @endif
                 </div>
             </div>
@@ -62,18 +67,57 @@
 
         var domain = protocol + '//' + host + ':8000';
 
-        if(lang.value == 'en') {
-            if(currentUrl.indexOf(domain + '/tha') !== -1) {
+        if (lang.value == 'en') {
+            if (currentUrl.indexOf(domain + '/tha') !== -1) {
                 var newUrl = currentUrl.replace(domain + '/tha', domain + '/en');
                 window.location.href = newUrl;
             }
         }
 
-        if(lang.value == 'tha') {
-            if(currentUrl.indexOf(domain + '/en') !== -1) {
+        if (lang.value == 'tha') {
+            if (currentUrl.indexOf(domain + '/en') !== -1) {
                 var newUrl = currentUrl.replace(domain + '/en', domain + '/tha');
                 window.location.href = newUrl;
             }
         }
+    }
+
+    function handleSubcrible() {
+        var email = document.getElementById('emailSubcrile').value;
+        var currentToken = $('meta[name="csrf-token"]').attr('content');
+
+        if (isValidEmail(email)) {
+            $.ajax({
+                url: "/saveMailSubcrible",
+                type: "post",
+                data: {
+                    'email': email,
+                    _token: currentToken
+                },
+                success: function (response) {
+                    // you will get response from your php page (what you echo or print)
+                    if (response == '1') {
+                        alert("Follow Successful");
+                    }
+                    if (response == '2') {
+                        alert("Email Already Follow");
+                    }
+                    if (response == '0') {
+                        alert("System Error");
+                    }
+                }
+            });
+
+        }
+        else {
+            alert("You have entered an invalid email address!")
+        }
+    }
+
+    function isValidEmail(email) {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+            return (true)
+        }
+        return (false)
     }
 </script>
