@@ -17,9 +17,6 @@ class AdminController extends Controller
 
     public function view($lang)
     {
-        $this->sendMailAllUser();
-        die();
-
         config(['app.locale' => $lang]);
         $page = 0;
 
